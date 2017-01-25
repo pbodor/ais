@@ -1,10 +1,10 @@
-import { Aivdm } from "./aivdm";
-import { AisPayload } from "./ais-payload";
+import { AivdmNmea } from "./aivdm-nmea";
+import { AivdmPayload } from "./aivdm-payload";
 
 export class Ais {
-  payload: AisPayload;
+  payload: AivdmPayload;
 
-  constructor(type: number, aivdm: Aivdm) {
-    this.payload = aivdm.payload;
+  constructor(type: number, aivdm: AivdmNmea) {
+    // this.payload = aivdm.payload;
   }
 }

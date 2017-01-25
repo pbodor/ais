@@ -1,7 +1,6 @@
 import { } from "jasmine";
 
-import { Nmea } from "nmea";
-import { Aivdm } from "../../src";
+import { AivdmNmea } from "../../src";
 
 describe("Aivdm", () => {
     let messages: string[] = [];
@@ -20,16 +19,28 @@ describe("Aivdm", () => {
     it("should not create instance.", () => {
         let message = null;
         try {
-            new Aivdm(message);
+            new AivdmNmea(message);
+            fail(message);
         } catch (e) {
-            console.log(e.message);
+            expect(e.message).not.toBeNull(message);
+        }
+
+        message = messages[1];
+        try {
+            new AivdmNmea(message);
+            fail(message);
+        } catch (e) {
+            expect(e.message).not.toBeNull(message);
         }
     });
 
     it("should create instance.", () => {
-        let nmea = new Nmea(messages[0]);
-        console.log(nmea);
-        let aivdm: Aivdm = Aivdm.parse(nmea);
-        console.log(aivdm);
+        let message: string = messages[0];
+        expect(new AivdmNmea(message)).toBeTruthy();
+        message = messages[2];
+        expect(new AivdmNmea(message)).toBeTruthy();
+        message = messages[3];
+        expect(new AivdmNmea(message)).toBeTruthy();
+        // console.log(new Aivdm(message));
     });
 });

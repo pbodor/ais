@@ -1,10 +1,10 @@
-export class AisPayload {
+export class AivdmPayload {
     _encoded: string;
     _decoded: number[];
 
     constructor(encoded: string) {
         this._encoded = encoded;
-        this._decoded = this.decode(encoded);
+        // this._decoded = this.decode(encoded);
     }
 
     private decode(encoded: string): number[] {

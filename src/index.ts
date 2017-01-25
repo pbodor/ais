@@ -1,1 +1,1 @@
-export * from "./ais/index";
+export * from "./ais";
