@@ -39,7 +39,7 @@ describe("Aivdm", () => {
     it("should add aivdm1.", () => {
         let sentence: AivdmSentence = new AivdmSentence(new AivdmNmea(messages[2]));
         let message: AivdmNmea = new AivdmNmea(messages[3]);
-        let result: boolean = sentence.canBeAdded(message);
+        let result: boolean = sentence.isAddable(message);
         expect(result).toBeTruthy();
         sentence.add(message);
         console.log(sentence.payload);
@@ -48,7 +48,7 @@ describe("Aivdm", () => {
     it("should add aivdm2.", () => {
         let sentence: AivdmSentence = new AivdmSentence(new AivdmNmea(messages[3]));
         let message: AivdmNmea = new AivdmNmea(messages[2]);
-        let result: boolean = sentence.canBeAdded(message);
+        let result: boolean = sentence.isAddable(message);
         expect(result).toBeTruthy();
         sentence.add(message);
         console.log(sentence.payload);
@@ -57,7 +57,7 @@ describe("Aivdm", () => {
     it("should not add aivdm.", () => {
         let sentence: AivdmSentence = new AivdmSentence(new AivdmNmea(messages[2]));
         let message: AivdmNmea = new AivdmNmea(messages[2]);
-        let result: boolean = sentence.canBeAdded(message);
+        let result: boolean = sentence.isAddable(message);
         expect(result).toBeFalsy();
     });
 });

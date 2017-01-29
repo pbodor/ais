@@ -1,37 +1,12 @@
-export class AivdmPayload {
-    _encoded: string;
+export abstract class AisPayload {
     _decoded: number[];
 
     constructor(encoded: string) {
-        this._encoded = encoded;
-        // this._decoded = this.decode(encoded);
-    }
-
-    private decode(encoded: string): number[] {
-        let bits: number[] = [];
-
-        let sixBit: number[];
-        for (let c of encoded) {
-            sixBit = this.getSixBitArray(c.charCodeAt(0));
-            Array.prototype.push.apply(bits, sixBit);
-        }
-
-        return bits;
-    }
-
-    private getSixBitArray(ascii: number): number[] {
-        const BIT_NUM: number = 6;
-        const decimal: number = this.getDecimal(ascii);
-        const result: number[] = [];
-        for (let i = BIT_NUM - 1; i >= 0; i--) {
-            result.push((decimal >> i) % 2);
-        }
-        return result;
     }
 
     private getDecimal(ascii: number): number {
         let result: number = 0;
-
+        // 0x30 = 48, 0x77 = 119, 0x57 = 87, 0x60 = 96
         if (ascii < 0x30 || ascii > 0x77 || ((ascii > 0x57) && (ascii < 0x60))) {
             throw new Error("Out of range.");
         }

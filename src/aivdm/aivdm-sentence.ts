@@ -1,5 +1,5 @@
 import { AivdmNmea } from "./aivdm-nmea";
-import { AivdmPayload } from "./aivdm-payload";
+// import { AivdmPayload } from "./aivdm-payload";
 
 export class AivdmSentence {
     private aivdms: AivdmNmea[] = [];
@@ -18,7 +18,7 @@ export class AivdmSentence {
         return this.aivdms.length === this.baseNmea.countOfFragments;
     }
 
-    canBeAdded(aivdm: AivdmNmea): boolean {
+    isAddable(aivdm: AivdmNmea): boolean {
         return !this.isComplete() &&
             this.baseNmea.packetId === aivdm.packetId &&
             this.aivdms.filter((element, index, array) => {
@@ -29,13 +29,13 @@ export class AivdmSentence {
     }
 
     add(aivdm: AivdmNmea) {
-        if (!this.canBeAdded(aivdm)) {
+        if (!this.isAddable(aivdm)) {
             throw new Error("Cannot add aivdm. The aivdm is different from the others.");
         }
         this.aivdms.push(aivdm);
     }
 
-    get payload(): AivdmPayload {
+    get payload(): string{
         if (!this.isComplete()) {
             throw new Error("Cannot output payload. Sentence is not complete.");
         }
@@ -48,6 +48,6 @@ export class AivdmSentence {
             concat += element.payload;
         });
 
-        return new AivdmPayload(concat);
+        return concat;
     }
 }
