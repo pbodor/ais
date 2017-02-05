@@ -1,7 +1,7 @@
 import { AisMessageCNB } from "./ais-message-cnb";
 
-export class AisMessage01 extends AisMessageCNB {
+export class AisMessage03 extends AisMessageCNB {
     constructor(payloadBits: number[]) {
-        super(1, payloadBits);
+        super(3, payloadBits);
     }
 }

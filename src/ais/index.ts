@@ -1,3 +1,3 @@
-export * from "./ais-payload";
+export * from "./ais-payload-data";
 
 export * from "./message";
