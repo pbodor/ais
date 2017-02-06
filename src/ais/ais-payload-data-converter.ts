@@ -14,7 +14,7 @@ export class AisPayloadDataConverter {
         return payload[index] === 1;
     }
 
-    static toSixBitASCIIString(payload: number[], index: number, charSize: number): string {
+    static toSixBitString(payload: number[], index: number, charSize: number): string {
         let result: string = "";
         for (let i = 0; i < charSize; i++) {
             result += this.toSixBitASCII(payload, index + i * 6);

@@ -4,7 +4,7 @@ import { AisPayloadDataConverter} from "../ais-payload-data-converter";
 
 export abstract class AisMessageBase implements AisMessage {
 
-    constructor(private _type: number, protected payloadBits: number[]) {
+    protected constructor(private _type: number, protected payloadBits: number[]) {
     }
 
     get type(): number {

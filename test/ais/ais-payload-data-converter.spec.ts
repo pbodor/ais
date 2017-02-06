@@ -1,6 +1,6 @@
 import { } from "jasmine";
 
-import { AisPayloadData } from "../../src";
+import { AisPayloadDataConverter } from "../../src";
 
 describe("AisPayloadData", () => {
     let messages: string[] = [];

@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "alwaysStrict": true,
         "baseUrl": "",
         "declaration": false,
         "module": "commonjs",
