@@ -4,7 +4,7 @@
     "description": "AIS reader for Javascript/Typescript",
     "main": "dist/index.js",
     "scripts": {
-        "build": "tsc -p src/tsconfig.json",
+        "build": "tsc -p ./src/tsconfig.json",
         "test": "karma start"
     },
     "repository": {

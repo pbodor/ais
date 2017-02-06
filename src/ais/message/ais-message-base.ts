@@ -4,7 +4,7 @@ import { AisPayloadDataConverter} from "../ais-payload-data-converter";
 
 export abstract class AisMessageBase implements AisMessage {
 
-    protected constructor(private _type: number, protected payloadBits: number[]) {
+    protected constructor(private _type: number, private payloadBits: number[]) {
     }
 
     get type(): number {
@@ -12,11 +12,23 @@ export abstract class AisMessageBase implements AisMessage {
     }
 
     get repeat(): number {
-        return AisPayloadDataConverter.toInt(this.payloadBits, 6, 2);
+        return this.toInt(6, 2);
     }
 
     get mmsi(): number {
-        return AisPayloadDataConverter.toInt(this.payloadBits, 8, 30);
+        return this.toInt(8, 30);
+    }
+
+    protected toInt(index: number, length: number): number {
+        return AisPayloadDataConverter.toInt(this.payloadBits, index, length);
+    }
+
+    protected toBoolean(index: number): boolean {
+        return AisPayloadDataConverter.toBoolean(this.payloadBits, index);
+    }
+
+    protected toSixBitString(index: number, charSize: number): string {
+        return AisPayloadDataConverter.toSixBitString(this.payloadBits, index, charSize);
     }
 
     protected getLongitudeDeg(raw_longitude: number): number {
