@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "baseUrl": "",
+        "noImplicitAny": true,
         "declaration": false,
         "module": "commonjs",
         "mapRoot": "./",

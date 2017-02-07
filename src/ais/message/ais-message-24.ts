@@ -1,17 +1,22 @@
 import { AisMessageBase } from "./ais-message-base";
+import { ShipType } from "../common/ship-type";
 
 export class AisMessage24 extends AisMessageBase {
     constructor(payloadBits: number[]) {
         super(24, payloadBits);
     }
-    get portNumber(): number { return super.toInt(38, 2); }
-    get vesselName(): string { return super.toSixBitString(40, 20); }
-    get shipType(): number { return super.toInt(168, 8); }
-    get venderId(): number { return super.toInt(176, 7); }
-    get callSign(): string { return super.toSixBitString(218, 7); }
-    get dimensionToBow(): number { return super.toInt(260, 9); }
-    get dimensionToStern(): number { return super.toInt(269, 9); }
-    get dimensionToPort(): number { return super.toInt(278, 6); }
-    get dimensionToStarboard(): number { return super.toInt(284, 6); }
-    get mothershipMmsi(): number { return super.toInt(290, 30); }
+    // Part A
+    get partno(): number { return super.toInt(38, 2); }
+    get shipname(): string { return super.toSixBitString(40, 20); }
+    // Part B
+    get shiptype(): ShipType { return super.toInt(40, 8); }
+    get vendorid(): string { return super.toSixBitString(48, 3); }
+    get model(): number { return super.toInt(66, 4); }
+    get serial(): number { return super.toInt(70, 20); }
+    get callsign(): string { return super.toSixBitString(90, 7); }
+    get to_bow(): number { return super.toInt(132, 9); }
+    get to_stern(): number { return super.toInt(141, 9); }
+    get to_port(): number { return super.toInt(150, 6); }
+    get to_starboard(): number { return super.toInt(156, 6); }
+    get mothership_mmsi(): number { return super.toInt(162, 30); }
 }

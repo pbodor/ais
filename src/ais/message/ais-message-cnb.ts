@@ -1,18 +1,20 @@
 import { AisMessageBase } from "./ais-message-base";
+import { NavigationStatus } from "../common/navigation-status";
+import { ManeuverIndicator } from "../common/maneuver-indicator";
 
 export abstract class AisMessageCNB extends AisMessageBase {
-    get navigationStatus(): number { return super.toInt(38, 4); }
-    get rot(): number { return super.toInt(42, 8); }
-    get sog(): number { return super.toInt(50, 10); }
-    get positionAccuracy(): number { return super.toInt(60, 1); }
-    get longitude(): number { return super.toInt(61, 28); }
-    get longitudeDeg(): number { return super.getLongitudeDeg(this.longitude); }
-    get latitude(): number { return super.toInt(89, 27); }
-    get latitudeDeg(): number { return super.getLatitudeDeg(this.latitude); }
-    get cog(): number { return super.toInt(116, 12) * 0.1; }
-    get hdg(): number { return super.toInt(128, 9); }
-    get timestamp(): number { return super.toInt(137, 6); }
-    get maneuverIndicator(): number { return super.toInt(143, 2); }
-    get raimFrag(): number { return super.toInt(148, 1); }
-    get communicationState(): number { return super.toInt(149, 19); }
+    get status(): NavigationStatus { return super.toInt(38, 4); }
+    get turn(): number { return super.toInt(42, 8); }
+    get speed(): number { return super.toInt(50, 10); }
+    get accuracy(): boolean { return super.toBoolean(60); }
+    get lon(): number { return super.toInt(61, 28); }
+    get lonDeg(): number { return super.getLongitudeDeg(this.lon); }
+    get lat(): number { return super.toInt(89, 27); }
+    get latDeg(): number { return super.getLatitudeDeg(this.lat); }
+    get course(): number { return super.toInt(116, 12) * 0.1; }
+    get heading(): number { return super.toInt(128, 9); }
+    get second(): number { return super.toInt(137, 6); }
+    get maneuver(): ManeuverIndicator { return super.toInt(143, 2); }
+    get raim(): boolean { return super.toBoolean(148); }
+    get radio(): number { return super.toInt(149, 19); }
 }

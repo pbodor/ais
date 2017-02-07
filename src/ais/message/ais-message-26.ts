@@ -4,10 +4,10 @@ export class AisMessage26 extends AisMessageBase {
     constructor(payloadBits: number[]) {
         super(26, payloadBits);
     }
-    get destinationIndicator(): boolean { return super.toBoolean(38); }
-    get binaryDataFlag(): boolean { return super.toBoolean(39); }
-    get destinationMmsi(): number { return super.toInt(40, 30); }
-    get applicationId(): number { return undefined; }
+    get addressed(): boolean { return super.toBoolean(38); }
+    get structured(): boolean { return super.toBoolean(39); }
+    get dest_mmsi(): number { return super.toInt(40, 30); }
+    get app_id(): number { return undefined; }
     get data(): string { return undefined; }
-    get radioStatus(): number { return undefined; }
+    get radio(): number { return undefined; }
 }

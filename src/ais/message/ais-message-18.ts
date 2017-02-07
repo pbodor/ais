@@ -4,21 +4,22 @@ export class AisMessage18 extends AisMessageBase {
     constructor(payloadBits: number[]) {
         super(18, payloadBits);
     }
-    get speedOverGround(): number { return super.toInt(46, 10); }
-    get positionAccuracy(): boolean { return super.toBoolean(56); }
-    get longitude(): number { return super.toInt(57, 28); }
-    get longitudeDeg(): number { return super.getLongitudeDeg(this.longitude); }
-    get latitude(): number { return super.toInt(85, 27); }
-    get latitudeDeg(): number { return super.getLatitudeDeg(this.latitude); }
-    get courseOverGround(): number { return super.toInt(112, 12); }
-    get trueHeading(): number { return super.toInt(124, 9); }
-    get timestamp(): number { return super.toInt(133, 6); }
-    get csUnit(): boolean { return super.toBoolean(141); }
-    get displayFlag(): boolean { return super.toBoolean(142); }
-    get dscFlag(): boolean { return super.toBoolean(143); }
-    get bandFlag(): boolean { return super.toBoolean(144); }
-    get message22Flag(): boolean { return super.toBoolean(145); }
+    get speed(): number { return super.toInt(46, 10); }
+    get accuracy(): boolean { return super.toBoolean(56); }
+    get lon(): number { return super.toInt(57, 28); }
+    get lonDeg(): number { return super.getLongitudeDeg(this.lon); }
+    get lat(): number { return super.toInt(85, 27); }
+    get latDeg(): number { return super.getLatitudeDeg(this.lat); }
+    get course(): number { return super.toInt(112, 12); }
+    get heading(): number { return super.toInt(124, 9); }
+    get regional(): number { return super.toInt(133, 6); }
+    get second(): number { return super.toInt(139, 2); }
+    get cs(): boolean { return super.toBoolean(141); }
+    get display(): boolean { return super.toBoolean(142); }
+    get dsc(): boolean { return super.toBoolean(143); }
+    get band(): boolean { return super.toBoolean(144); }
+    get msg22(): boolean { return super.toBoolean(145); }
     get assigned(): boolean { return super.toBoolean(146); }
-    get raimFrag(): boolean { return super.toBoolean(147); }
-    get radioStatus(): number { return super.toInt(148, 20); }
+    get raim(): boolean { return super.toBoolean(147); }
+    get radio(): number { return super.toInt(148, 20); }
 }
