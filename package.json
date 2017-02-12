@@ -1,37 +1,39 @@
 {
-    "name": "ais",
-    "version": "0.1.0",
-    "description": "AIS reader for Javascript/Typescript",
-    "main": "dist/index.js",
-    "scripts": {
-        "build": "tsc -p ./src/tsconfig.json",
-        "test": "karma start"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/kyosho-/ais.git"
-    },
-    "keywords": [
-        "AIS"
-    ],
-    "author": "Akira Kurosawa",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/kyosho-/ais/issues"
-    },
-    "homepage": "https://github.com/kyosho-/ais#readme",
-    "devDependencies": {
-        "@types/jasmine": "^2.5.41",
-        "@types/node": "^7.0.1",
-        "jasmine": "^2.5.3",
-        "jasmine-core": "^2.5.2",
-        "karma": "^1.4.0",
-        "karma-firefox-launcher": "^1.0.0",
-        "karma-jasmine": "^1.1.0",
-        "karma-typescript": "^2.1.6",
-        "typescript": "^2.1.5"
-    },
-    "dependencies": {
-        "nmea": "^0.1.0"
-    }
+  "name": "ais",
+  "version": "0.1.0",
+  "description": "AIS reader for Javascript/Typescript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p ./src/tsconfig.json",
+    "test": "karma start",
+    "doc": "typedoc --name \"ais-0.1.0 API Documentation\" --mode modules --exclude */**/*.spec.ts --exclude */**/index.ts --readme README.md --module commonjs --target ES5 --out doc src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyosho-/ais.git"
+  },
+  "keywords": [
+    "AIS"
+  ],
+  "author": "Akira Kurosawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyosho-/ais/issues"
+  },
+  "homepage": "https://github.com/kyosho-/ais#readme",
+  "devDependencies": {
+    "@types/jasmine": "^2.5.41",
+    "@types/node": "^7.0.1",
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-typescript": "^2.1.6",
+    "typedoc": "^0.5.5",
+    "typescript": "^2.1.5"
+  },
+  "dependencies": {
+    "nmea": "^0.1.0"
+  }
 }
