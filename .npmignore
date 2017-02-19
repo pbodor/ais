@@ -1,0 +1,9 @@
+coverage
+doc
+node_modules
+package
+*.tgz
+src
+test
+
+karma.conf.js

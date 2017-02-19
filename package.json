@@ -1,5 +1,5 @@
 {
-  "name": "ais",
+  "name": "ais-js",
   "version": "0.1.0",
   "description": "AIS reader for Javascript/Typescript",
   "main": "dist/index.js",
@@ -15,25 +15,26 @@
   "keywords": [
     "AIS"
   ],
-  "author": "Akira Kurosawa",
+  "author": {
+      "name": "kyosho",
+      "email": "kyosho8080@gmail.com",
+      "url": "https://github.com/kyosho-/nmea"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kyosho-/ais/issues"
   },
   "homepage": "https://github.com/kyosho-/ais#readme",
   "devDependencies": {
-    "@types/jasmine": "^2.5.41",
-    "@types/node": "^7.0.1",
+    "@types/jasmine": "^2.5.43",
+    "@types/node": "^7.0.5",
     "jasmine": "^2.5.3",
     "jasmine-core": "^2.5.2",
-    "karma": "^1.4.0",
+    "karma": "^1.4.1",
     "karma-firefox-launcher": "^1.0.0",
     "karma-jasmine": "^1.1.0",
-    "karma-typescript": "^2.1.6",
-    "typedoc": "^0.5.5",
-    "typescript": "^2.1.5"
-  },
-  "dependencies": {
-    "nmea": "^0.1.0"
+    "karma-typescript": "^2.1.7",
+    "typedoc": "^0.5.7",
+    "typescript": "^2.2.0"
   }
 }

@@ -1,4 +1,4 @@
-import { Nmea } from "nmea";
+import { Nmea } from "../nmea";
 
 /**
  * AIVDM/AIVDO Sentence Layer
