@@ -1,6 +1,6 @@
 {
   "name": "ais-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AIS reader for Javascript/Typescript",
   "main": "dist/index.js",
   "scripts": {
@@ -15,11 +15,7 @@
   "keywords": [
     "AIS"
   ],
-  "author": {
-      "name": "kyosho",
-      "email": "kyosho8080@gmail.com",
-      "url": "https://github.com/kyosho-/nmea"
-  },
+  "author": "kyosho",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kyosho-/ais/issues"
