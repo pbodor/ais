@@ -2,7 +2,7 @@
     "compilerOptions": {
         "alwaysStrict": true,
         "baseUrl": "",
-        "declaration": false,
+        "declaration": true,
         "module": "commonjs",
         "mapRoot": "./",
         "moduleResolution": "node",

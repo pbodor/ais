@@ -1,6 +1,6 @@
 {
   "name": "ais-js",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "AIS reader for Javascript/Typescript",
   "main": "dist/index.js",
   "scripts": {
